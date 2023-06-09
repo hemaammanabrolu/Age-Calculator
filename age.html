@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="age.css" class="css">
+  <title>Javascript Age Calculator</title>
+  </head>
+
+<body>
+  <div class="container" >
+          <h2 >Age caluclator</h2>
+      <label class="givendate" style="padding-left: 15px;">
+          Current Date:  <input  type="date" id="cDate"style ="margin-left:20px;margin-top:20px">
+      </label>
+      <div>
+         <br>
+        <label class="dobdate"style="padding-left: 15px;">
+           Date of Birth: <input type="date" id="dDate" style ="margin-left:20px">
+        </label>
+      </div>
+    
+     <button  onclick="caluclate()" >Caluclate</button>
+      <h3  id="showage" >Age:</h3>  
+  </div>
+    
+</body>
+<script>
+  function caluclate(){
+    let date1 = document.getElementById("dDate").value;
+    let date2 = document.getElementById("cDate").value;
+
+    if (!date2){
+      date2 = new Date().toJSON().slice(0,10);
+    }
+    let dob = new Date(date1);
+    let cDate = new Date(date2);
+
+    let diff = new Date(cDate.getTime() - dob.getTime());
+
+    let output = document.getElementById('showage');
+    output.id = "showage";
+
+    if(diff == NaN || !date1){
+      output.innerHTML = "Please select date first";
+      return;
+    }
+    if(date1>date2){
+      output.innerHTML = "Invalid Input!";
+      return
+    }
+    output.innerHTML = "Age:" + " " + Number(diff.getUTCFullYear()-1970)+ " years" + " " +diff.getUTCMonth()+ " Months" + " " + Number(diff.getUTCDate() - 1)+ " Days";
+ }
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</html>

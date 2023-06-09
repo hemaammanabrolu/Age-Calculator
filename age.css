@@ -1,0 +1,46 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: lightblue;
+   box-sizing: border-box;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    width: 500px;
+    border-radius: 2px;
+    margin-top: 50px;
+    background-color:white;
+    height: 400px;
+    min-height: 100px;
+    
+}
+h2{
+    text-align: center;
+    align-items: center;
+    box-shadow: 0px 1px lightgray;
+    
+}
+button{
+    background-color: blue;
+    color: white;
+    margin: 40px 0px 60px 150px;
+    border-color: white;
+    width: 100px;
+    height: 50px;
+    box-shadow: 0px 0px white;
+}
+
+#showage{
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 5px;
+    width:70%;
+    margin: 15px auto;
+    background-color: black;
+    color: white;
+    height: 50px;
+    margin-bottom: 0px  10px 20px 50px;
+
+}
